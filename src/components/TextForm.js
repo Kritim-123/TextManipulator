@@ -8,23 +8,27 @@ export default function TextForm(props) {
         
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to upperCase", "success");
     }
 
     const handleLowClick = () => {
         
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase", "success");
     }
 
     const handleColorRed = () => {
         
         setColor("red");
+        props.showAlert("Converted to red Color", "success");
     }
 
     const handleColorYellow = () => {
         
         setColor("yellow");
-    }
+        props.showAlert("Converted to yellow Color", "success");
+    }    
 
     const handleOnChange = (event) => {
         
@@ -50,12 +54,12 @@ export default function TextForm(props) {
         <button className='btn btn-danger mx-2' onClick={handleColorRed}>Change to Red Color</button>
     </div>
 
-    <div className="conatiner my-3" style= {{color : props.mode == 'dark' ? 'white': 'black'}}>
+    <div className="conatiner my-3" style= {{color : props.mode === 'dark' ? 'white': 'black'}}>
         <h2>Your Text Summary</h2>
         <p>{text.split(" ").length} words, {text.length} characters</p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
-        <p style ={{ color: color}} > {text}</p>
+    <p style ={{ color: color}}>  {text.length>0?text: "Enter something in the textbox above"}</p>
     </div>
     </>
 
