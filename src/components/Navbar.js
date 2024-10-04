@@ -23,20 +23,19 @@ export default function Navbar(props){
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form> */}
-          <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div className="btn-group me-2" role="group" aria-label="First group">
-              <button type="button" style ={{backgroundColor: '#388f20'}} onClick={ () => props.handleColor('#388f20')} className={`btn ${props.activeButton === 'btn1' ? 'glow' : ''}`}>1</button>
-              <button type="button" style ={{backgroundColor: '#8f2070'}} onClick={ () => props.handleColor('#8f2070')} className={`btn ${props.activeButton === 'btn2' ? 'glow' : ''}`}>2</button>
-              <button type="button" style ={{backgroundColor: '#208f77'}} onClick={ () => props.handleColor('#208f77')} className={`btn ${props.activeButton === 'btn3' ? 'glow' : ''}`}>3</button>
-              <button type="button" style ={{backgroundColor: '#8f7720'}} onClick={ () => props.handleColor('#8f7720')} className={`btn ${props.activeButton === 'btn4' ? 'glow' : ''}`}>4</button>
-            </div>
-          </div>
           
-
-          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark': 'light'}`}>
+          
+          <div className='group'>
+            <button className='rounded-circle' type="button" style ={{backgroundColor: '#388f20'}} onClick={ () => props.toggleMode('#388f20')}>1</button>
+            <button className='rounded-circle' type="button" style ={{backgroundColor: '#8f2070'}} onClick={ () => props.toggleMode('#8f2070')} >2</button>
+            <button className='rounded-circle' type="button" style ={{backgroundColor: '#208f77'}} onClick={ () => props.toggleMode('#208f77')} >3</button>
+            <button className='rounded-circle' type="button" style ={{backgroundColor: '#8f7720'}} onClick={ () => props.toggleMode('#8f7720')} >4</button>
+          </div>
+         
+          {/* <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark': 'light'}`}>
           <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
           <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
-          </div>
+          </div> */}
 
         </div>
     </div>

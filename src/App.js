@@ -20,6 +20,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
@@ -45,17 +46,21 @@ function App() {
     setactiveButton(buttonId);
   }
 
-const toggleMode = () => {
-  if(mode === 'light'){
-    setMode('dark');
-    document.body.style.backgroundColor = color;
-    showAlert("Dark mode has been enabled", "success");
-  }
-  else{
-    setMode('light'); 
-    document.body.style.backgroundColor = 'white';
-    showAlert("Light mode has been enabled", "success");
-  }
+const toggleMode = (colors) => {
+
+  document.body.style.backgroundColor = colors;
+
+  showAlert("Color mode has been enabled", "success");
+  // if(mode === 'light'){
+  //   setMode('dark');
+  //   document.body.style.backgroundColor = color;
+  //   showAlert("Dark mode has been enabled", "success");
+  // }
+  // else{
+  //   setMode('light'); 
+  //   document.body.style.backgroundColor = 'white';
+  //   showAlert("Light mode has been enabled", "success");
+  // }
 }
   return (
 <>
@@ -69,6 +74,7 @@ const toggleMode = () => {
       toggleMode={toggleMode} 
       handleColor={handleColor}
       activeButton={activeButton}
+      
     />
     <Alert alert = {alert}/>
     <div className="container my-3">
